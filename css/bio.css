@@ -1,0 +1,148 @@
+/* Estilos específicos para a página de biografia */
+
+.biography-container {
+    min-width: 1200px;
+    margin: 10px auto 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bio-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bio-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ff69b4, #9370db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.bio-header h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.bio-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.bio-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: justify;
+}
+
+.bio-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.bio-images {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bio-image-main, .bio-image-secondary {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.bio-image-main:hover, .bio-image-secondary:hover {
+    transform: scale(1.05);
+}
+
+.bio-image-main img, .bio-image-secondary img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.bio-image-main {
+    max-height: 400px;
+}
+
+.bio-image-main img {
+    height: 100%;
+    object-position: center;
+}
+
+.bio-image-secondary {
+    max-height: 400px;
+}
+
+.bio-image-secondary img {
+    height: 100%;
+    object-position: center;
+}
+
+/* Estilos para links ativos no menu */
+.nav-item.active {
+    background-color: rgba(128, 128, 128, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .bio-content {
+        flex-direction: column-reverse;
+    }
+    
+    .bio-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .bio-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .bio-images {
+        flex-direction: row;
+    }
+    
+    .bio-image-main, .bio-image-secondary {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .bio-header h1 {
+        font-size: 2rem;
+    }
+    
+    .bio-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .bio-images {
+        flex-direction: column;
+    }
+    
+    .bio-text p {
+        font-size: 1rem;
+    }
+}

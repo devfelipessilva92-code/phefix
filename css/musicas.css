@@ -1,0 +1,219 @@
+/* Estilos específicos para a página de músicas */
+
+.musicas-container {
+    max-width: 100%;
+    margin: 0 0 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    min-height: calc(100vh - 200px);
+}
+
+.musicas-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.musicas-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ff69b4, #9370db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.musicas-header h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.musicas-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.musicas-flex-container {
+    display: flex;
+    flex-direction: row; /* Layout em linha */
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.player-section {
+    flex: 1; /* Ocupa espaço disponível */
+    max-width: 400px; /* Largura máxima para o player */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.bottom-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.next-song-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#next-song-btn {
+    background: linear-gradient(90deg, #ff69b4, #9370db);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#next-song-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+#next-song-btn:active {
+    transform: translateY(1px);
+}
+
+#next-song-btn i {
+    font-size: 1.4rem;
+}
+
+.lyrics-section {
+    flex: 2; /* Ocupa mais espaço que o player */
+    margin-top: 0;
+    width: auto;
+}
+
+.lyrics-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lyrics-container h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.lyrics-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    white-space: pre-line;
+    color: rgba(255, 255, 255, 0.9);
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.lyrics-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.lyrics-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.lyrics-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.lyrics-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .musicas-flex-container {
+        flex-direction: column; /* Volta para coluna em telas menores */
+        align-items: center;
+    }
+    .player-section {
+        max-width: 100%; /* Ocupa largura total em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .musicas-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .musicas-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .lyrics-container {
+        padding: 20px;
+    }
+    
+    .lyrics-container h3 {
+        font-size: 1.5rem;
+    }
+    
+    .lyrics-content {
+        font-size: 1rem;
+        max-height: 300px;
+    }
+    
+    #next-song-btn {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .musicas-header h1 {
+        font-size: 2rem;
+    }
+    
+    .musicas-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .lyrics-container {
+        padding: 15px;
+    }
+    
+    .lyrics-container h3 {
+        font-size: 1.3rem;
+    }
+    
+    .lyrics-content {
+        font-size: 0.9rem;
+        max-height: 250px;
+    }
+    
+    #next-song-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}

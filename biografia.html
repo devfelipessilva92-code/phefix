@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHEFIX - Biografia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.webp">
+</head>
+<body>
+    <!-- Slider de fotos será adicionado aqui -->
+    <div class="photo-slider">
+        <div class="slider-container">
+            <!-- As imagens serão adicionadas dinamicamente via JavaScript -->
+        </div>
+        <div class="slider-dots">
+            <!-- Os pontos de navegação serão adicionados dinamicamente via JavaScript -->
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <a href="index.html" aria-label="Logo">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-item">HOME</a></li>
+                <li><a href="biografia.html" class="nav-item active">BIOGRAFIA</a></li>
+                <li><a href="album.html" class="nav-item">FOTOS</a></li>
+                <li><a href="musicas.html" class="nav-item">MÚSICAS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="biography-container">
+            <div class="bio-header">
+                <h1 id="bio-title">Carregando...</h1>
+                <h2 id="bio-subtitle">Aguarde...</h2>
+            </div>
+            
+            <div class="bio-content">
+                <div class="bio-text" id="bio-text">
+                    <!-- O texto será inserido dinamicamente via JavaScript -->
+                    <p>Carregando conteúdo...</p>
+                </div>
+                
+                <div class="bio-images">
+                    <div class="bio-image-main">
+                        <img id="bio-image-main" src="images/placeholder.jpg" alt="PHFIX">
+                    </div>
+                    <div class="bio-image-secondary">
+                        <img id="bio-image-secondary" src="images/placeholder.jpg" alt="PHFIX">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="copyright">© 2025 PHEFIX</div>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+        </div>
+    </footer>
+    <!-- Carregando scripts -->
+    <script src="js/slider-config.js"></script>
+    <script src="js/photo-slider.js"></script>
+    <script src="js/bio-config.js"></script>
+    <script src="js/bio.js"></script>
+</body>
+</html>

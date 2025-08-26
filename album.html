@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHEFIX - Álbum de Fotos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/album.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.webp">
+    <style>
+        body {
+            background: url('images/bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" aria-label="Logo">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-item">HOME</a></li>
+                <li><a href="biografia.html" class="nav-item">BIOGRAFIA</a></li>
+                <li><a href="album.html" class="nav-item active">FOTOS</a></li>
+                <li><a href="musicas.html" class="nav-item">MÚSICAS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="album-container">
+            <div class="album-header">
+                <h1>Álbum de Fotos</h1>
+                <h2></h2>
+            </div>
+            
+            <div class="album-grid" id="album-grid">
+                <!-- Placeholders para carregamento progressivo -->
+                <div class="album-post placeholder"></div>
+                <div class="album-post placeholder"></div>
+                <div class="album-post placeholder"></div>
+                <div class="album-post placeholder"></div>
+                <div class="album-post placeholder"></div>
+                <div class="album-post placeholder"></div>
+                <div class="album-post placeholder"></div>
+                <div class="album-post placeholder"></div>
+                <div class="album-post placeholder"></div>
+                <div class="album-post placeholder"></div>
+                <div class="album-post placeholder"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="copyright">© 2025 PHEFIX</div>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-use.html">Terms of Use</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+        </div>
+    </footer>
+
+    <script src="js/album-config.js"></script>
+    <script src="js/album.js"></script>
+</body>
+</html>
