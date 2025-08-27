@@ -3,59 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHEFIX - Mosaíco de Fotos</title>
-    
-    <!-- Preload de recursos críticos -->
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="preload" href="css/album.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" as="style">
-    
-    <!-- DNS prefetch para recursos externos -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    
-    <!-- Estilos críticos inline para evitar FOUC -->
-    <style>
-        .album-container{max-width:1200px;margin:0 auto;padding:20px}
-        .loading-message{text-align:center;padding:60px 20px;color:#666;font-size:1.2rem}
-        .loading-message i{font-size:2rem;margin-bottom:15px;color:#e1306c}
-        .lazy-image{opacity:0.6;transition:opacity 0.3s ease;filter:blur(2px)}
-        .lazy-image.loaded{opacity:1;filter:none}
-    </style>
-    
-    <!-- Estilos não críticos -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>PHEFIX - Mosaico de Fotos</title>
     <link rel="stylesheet" href="css/album.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.webp">
-    
-    <!-- Meta tags para SEO e performance -->
-    <meta name="description" content="Ensaio fotográfico da banda PHEFIX - Veja as melhores fotos dos shows e bastidores">
-    <meta name="keywords" content="PHEFIX, banda, fotos, álbum, música, rock">
-    <meta name="author" content="PHEFIX">
-    
-    <!-- Open Graph para compartilhamento -->
-    <meta property="og:title" content="PHEFIX - Ensaio Fotográfico">
-    <meta property="og:description" content="Veja as melhores fotos da banda PHEFIX">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/logo.png">
 </head>
 <body>
-    <!-- Slider de fotos será adicionado aqui -->
-    <div class="photo-slider">
-        <div class="slider-container">
-            <!-- As imagens serão adicionadas dinamicamente via JavaScript -->
-        </div>
-        <div class="slider-dots">
-            <!-- Os pontos de navegação serão adicionados dinamicamente via JavaScript -->
-        </div>
-    </div>
-
     <header>
         <div class="logo">
             <a href="index.html" aria-label="Logo">
-                <img src="images/logo.png" alt="Logo" loading="eager">
+                <img src="images/logo.png" alt="Logo" width="120" height="60">
             </a>
         </div>
         <nav>
@@ -72,14 +30,13 @@
         <div class="album-container">
             <div class="album-header">
                 <h1>Ensaio Fotográfico</h1>
-                <h2></h2>
+                <h2>Mosaico de Imagens</h2>
             </div>
             
-            <div class="album-grid" id="instagram-feed">
-                <!-- As fotos do álbum serão carregadas aqui dinamicamente -->
+            <div class="mosaic-container" id="mosaic-container">
                 <div class="loading-message">
                     <i class="fas fa-spinner fa-spin"></i>
-                    <p>Carregando fotos do álbum...</p>
+                    <p>Carregando fotos...</p>
                 </div>
             </div>
         </div>
@@ -88,29 +45,12 @@
     <footer>
         <div class="copyright">© 2025 PHEFIX</div>
         <div class="footer-links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-use.html">Terms of Use</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="privacy-policy.html">Política de Privacidade</a>
+            <a href="terms-of-use.html">Termos de Uso</a>
+            <a href="cookie-policy.html">Política de Cookies</a>
         </div>
     </footer>
 
-    <!-- Scripts carregados de forma assíncrona -->
-    <script src="js/slider-config.js" async></script>
-    <script src="js/photo-slider.js" async></script>
-    <script src="js/album-config.js"></script>
     <script src="js/album.js"></script>
-    
-    <!-- Service Worker para cache (opcional) -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js').then(function(registration) {
-                    console.log('SW registered: ', registration);
-                }).catch(function(registrationError) {
-                    console.log('SW registration failed: ', registrationError);
-                });
-            });
-        }
-    </script>
 </body>
 </html>

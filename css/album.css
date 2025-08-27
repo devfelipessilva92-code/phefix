@@ -1,253 +1,198 @@
-/* Estilos específicos para a página de álbum - Estilo Mosaico */
+/* Estilos para mosaico de fotos com padrão alternado correto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav a:hover, nav a.active {
+    color: #ff69b4;
+    background-color: rgba(255, 105, 180, 0.1);
+}
 
 .album-container {
-    max-width: 100%;
-    margin: 0 0 50px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
-    min-height: calc(100vh - 200px);
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 2rem;
 }
 
 .album-header {
     text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .album-header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
     background: linear-gradient(90deg, #ff69b4, #9370db);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    display: inline-block;
 }
 
 .album-header h2 {
     font-size: 1.5rem;
     font-weight: 400;
     opacity: 0.8;
-    margin-bottom: 15px;
 }
 
-.instagram-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 1.2rem;
-}
-
-.instagram-info i {
-    font-size: 1.5rem;
-    color: #e1306c;
-}
-
-/* Novo estilo de mosaico para o grid de 4 colunas */
-.album-grid {
-    display: grid;
-    align-content: start;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 200px; /* Altura fixa para melhor alinhamento */
-    gap: 10px; /* Gap menor para layout mais compacto */
-    margin-top: 30px;
+/* Container do mosaico com padrão alternado correto */
+.mosaic-container {
     width: 100%;
-    max-width: 1200px; /* Largura máxima para controlar o layout */
-    margin-left: auto;
-    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 100px;
+    gap: 10px;
 }
 
-/* Estilos para lazy loading otimizado */
-.lazy-image {
-    opacity: 0.7;
-    transition: opacity 0.4s ease, filter 0.4s ease;
-    filter: blur(1px) brightness(0.9);
-}
-
-.lazy-image.loaded {
-    opacity: 1;
-    filter: none;
-}
-
-.lazy-image.error {
-    opacity: 0.5;
-    filter: grayscale(100%);
-}
-
-/* Animação de fade-in suave para imagens carregadas */
-.album-image-container img.loaded {
-    animation: fadeInSmooth 0.6s ease-in-out;
-}
-
-@keyframes fadeInSmooth {
-    from {
-        opacity: 0.7;
-        transform: scale(0.98);
-        filter: blur(1px);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-        filter: none;
-    }
-}
-
-/* Loading skeleton para melhor UX */
-.album-image-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-    border-radius: 10px;
-    z-index: 1;
-}
-
-.album-image-container img.loaded + *::before,
-.album-image-container img.loaded::before {
-    display: none;
-}
-
-@keyframes loading {
-    0% {
-        background-position: 200% 0;
-    }
-    100% {
-        background-position: -200% 0;
-    }
-}
-
-/* Classes para diferentes tamanhos de células no mosaico */
-.instagram-post {
+/* Peças do mosaico */
+.mosaic-piece {
     position: relative;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     cursor: pointer;
-    width: 100%;
-    height: 100%;
-    background-color: #333;
+    background-color: #1a1a1a;
 }
 
-/* Apenas wide (2 grids horizontais), tall (2 grids verticais), large (4 grids quadrado) e small (1 grid) */
-.instagram-post.small {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.instagram-post.wide {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.instagram-post.tall {
-    grid-column: span 1;
-    grid-row: span 2;
-}
-
-.instagram-post.large {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.instagram-post:hover {
+.mosaic-piece:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     z-index: 2;
 }
 
-.instagram-post img {
+.mosaic-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 10px;
+    transition: transform 0.5s ease;
 }
 
-.album-image-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 10px;
+.mosaic-piece:hover .mosaic-image {
+    transform: scale(1.08);
 }
 
-.instagram-post .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
-    padding: 15px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+/* Padrão correto: 1 grande (4x6) + 4 pequenas (2x3) */
+.mosaic-piece.pattern-start-large {
+    grid-column: span 6;
+    grid-row: span 4;
 }
 
-.instagram-post:hover .overlay {
-    opacity: 1;
+.mosaic-piece.pattern-small {
+    grid-column: span 3;
+    grid-row: span 2;
 }
 
-.instagram-post .caption {
-    color: white;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+.mosaic-piece.pattern-end-large {
+    grid-column: span 6;
+    grid-row: span 4;
 }
 
-.instagram-post .date {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
+/* Aplicar padrão baseado na posição - 5 imagens por grupo */
+.mosaic-piece:nth-child(10n+1) {
+    grid-column: span 6;
+    grid-row: span 4;
 }
 
-.loading-message {
+.mosaic-piece:nth-child(10n+2),
+.mosaic-piece:nth-child(10n+3),
+.mosaic-piece:nth-child(10n+4),
+.mosaic-piece:nth-child(10n+5) {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.mosaic-piece:nth-child(10n+6),
+.mosaic-piece:nth-child(10n+7),
+.mosaic-piece:nth-child(10n+8),
+.mosaic-piece:nth-child(10n+9) {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.mosaic-piece:nth-child(10n+10) {
+    grid-column: span 6;
+    grid-row: span 4;
+}
+
+/* Ajuste para a 37ª imagem - manter como grande */
+.mosaic-piece:nth-child(37) {
+    grid-column: span 6;
+    grid-row: span 4;
+}
+
+.loading-message, .error-message {
     grid-column: 1 / -1;
     text-align: center;
     padding: 50px 0;
-}
-
-.loading-message i {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #e1306c;
 }
 
 .error-message {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 50px 0;
     color: #ff6b6b;
 }
 
-/* Lightbox para visualização ampliada */
+/* Lightbox */
 .lightbox {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: all;
 }
 
 .lightbox-content {
@@ -264,7 +209,6 @@
     max-height: 80vh;
     object-fit: contain;
     border-radius: 5px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
 }
 
 .lightbox-close {
@@ -290,43 +234,36 @@
     transform: scale(1.1);
 }
 
-.lightbox-caption {
-    color: white;
-    padding: 15px;
-    text-align: center;
-    max-width: 80%;
-    margin-top: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-}
-
 .lightbox-nav {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 1001;
     border: none;
 }
 
 .lightbox-nav:hover {
-    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .lightbox-prev {
-    left: 0;
+    left: 20px;
 }
 
 .lightbox-next {
-    right: 0;
+    right: 20px;
 }
 
 .lightbox-counter {
@@ -341,113 +278,176 @@
     font-size: 0.9rem;
 }
 
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid #333;
+    color: #666;
+    background-color: #0a0a0a;
+}
+
+.footer-links {
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: #ff69b4;
+}
+
 /* Responsividade */
 @media (max-width: 1200px) {
-    .album-grid {
+    .mosaic-container {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    
+    .mosaic-piece:nth-child(10n+1),
+    .mosaic-piece:nth-child(10n+10),
+    .mosaic-piece:nth-child(37) {
+        grid-column: span 4;
+        grid-row: span 3;
+    }
+    
+    .mosaic-piece:nth-child(10n+2),
+    .mosaic-piece:nth-child(10n+3),
+    .mosaic-piece:nth-child(10n+4),
+    .mosaic-piece:nth-child(10n+5),
+    .mosaic-piece:nth-child(10n+6),
+    .mosaic-piece:nth-child(10n+7),
+    .mosaic-piece:nth-child(10n+8),
+    .mosaic-piece:nth-child(10n+9) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+
+@media (max-width: 900px) {
+    .mosaic-container {
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 80px;
+    }
+    
+    .album-header h1 {
+        font-size: 2.8rem;
+    }
+    
+    .mosaic-piece:nth-child(10n+1),
+    .mosaic-piece:nth-child(10n+10),
+    .mosaic-piece:nth-child(37) {
+        grid-column: span 3;
+        grid-row: span 3;
+    }
+    
+    .mosaic-piece:nth-child(10n+2),
+    .mosaic-piece:nth-child(10n+3),
+    .mosaic-piece:nth-child(10n+4),
+    .mosaic-piece:nth-child(10n+5),
+    .mosaic-piece:nth-child(10n+6),
+    .mosaic-piece:nth-child(10n+7),
+    .mosaic-piece:nth-child(10n+8),
+    .mosaic-piece:nth-child(10n+9) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .mosaic-container {
         grid-template-columns: repeat(4, 1fr);
         gap: 8px;
-        max-width: 100%;
     }
     
-    .instagram-post.small {
-        grid-column: span 1;
-        grid-row: span 1;
+    header {
+        flex-direction: column;
+        padding: 1rem;
     }
     
-    .instagram-post.wide {
-        grid-column: span 2;
-        grid-row: span 1;
+    nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
-    .instagram-post.tall {
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    
-    .instagram-post.large {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-}
-
-@media (max-width: 768px) {
     .album-header h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     
     .album-header h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
-    .album-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-        grid-auto-rows: 150px; /* Altura menor para mobile */
+    .album-container {
+        padding: 1rem;
     }
     
-    .instagram-post.small {
-        grid-column: span 1;
-        grid-row: span 1;
+    .mosaic-piece:nth-child(10n+1),
+    .mosaic-piece:nth-child(10n+10),
+    .mosaic-piece:nth-child(37) {
+        grid-column: span 4;
+        grid-row: span 3;
     }
     
-    .instagram-post.wide, .instagram-post.large {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-    
-    .instagram-post.tall {
-        grid-column: span 1;
-        grid-row: span 2;
-    }
-    
-    .instagram-post.large {
+    .mosaic-piece:nth-child(10n+2),
+    .mosaic-piece:nth-child(10n+3),
+    .mosaic-piece:nth-child(10n+4),
+    .mosaic-piece:nth-child(10n+5),
+    .mosaic-piece:nth-child(10n+6),
+    .mosaic-piece:nth-child(10n+7),
+    .mosaic-piece:nth-child(10n+8),
+    .mosaic-piece:nth-child(10n+9) {
         grid-column: span 2;
         grid-row: span 2;
     }
     
     .lightbox-nav {
-        width: 20%;
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .album-header h1 {
-        font-size: 2rem;
-    }
-    
-    .album-header h2 {
-        font-size: 1.1rem;
-    }
-    
-    .album-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4px;
-        grid-auto-rows: 120px; /* Altura ainda menor para mobile pequeno */
-    }
-    
-    .instagram-post.small {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-    
-    .instagram-post.wide, .instagram-post.large, .instagram-post.tall {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-    
-    .instagram-post .overlay {
-        padding: 10px;
-    }
-    
-    .instagram-post .caption {
-        font-size: 0.8rem;
-        -webkit-line-clamp: 1;
-    }
-    
-    .lightbox-nav {
-        width: 25%;
+        width: 50px;
+        height: 50px;
         font-size: 1.5rem;
     }
+    
+    .lightbox-prev {
+        left: 10px;
+    }
+    
+    .lightbox-next {
+        right: 10px;
+    }
 }
 
+@media (max-width: 400px) {
+    .mosaic-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .mosaic-piece:nth-child(10n+2),
+    .mosaic-piece:nth-child(10n+3),
+    .mosaic-piece:nth-child(10n+4),
+    .mosaic-piece:nth-child(10n+5),
+    .mosaic-piece:nth-child(10n+6),
+    .mosaic-piece:nth-child(10n+7),
+    .mosaic-piece:nth-child(10n+8),
+    .mosaic-piece:nth-child(10n+9) {
+        grid-column: span 1;
+    }
+    
+    .mosaic-piece:nth-child(10n+1),
+    .mosaic-piece:nth-child(10n+10),
+    .mosaic-piece:nth-child(37) {
+        grid-column: span 2;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .album-header h1 {
+        font-size: 2rem;
+    }
+}
