@@ -24,22 +24,24 @@
 
 const bioConfig = {
     // Título principal da biografia
-    title: "PHEFIX: Uma Jornada Musical",
+    title: "PHEFIX: A Arte em Múltiplas Expressões",
     
     // Subtítulo da biografia
-    subtitle: "Cantar e compor músicas, PHEFIX desenha, pinta e escreve poesias",
+    subtitle: "",
     
     // Parágrafos da biografia (adicione quantos desejar)
     paragraphs: [
-        "<b>PHEFIX</b> é uma cantora, compositora e produtora cultural brasiliense. A música sempre foi uma constância na sua vida, tendo montado diversas bandas e grupos musicais ao longo da infância e adolescência. Começou a escrever canções ainda na adolescência, mas só iniciou seus estudos na música em 2017.",
+        "Cantora, compositora e produtora cultural brasiliense, <b>PHEFIX</b> traça uma trajetória artística multifacetada, onde a música é o fio condutor de uma expressão criativa que também transborda para o desenho, a pintura e a poesia.",
         
-        "Morou por 7 anos no Rio de Janeiro e lá participou do Projeto Toque e Se Toque e Coral Tijucanto, de 2017 à 2021; participou do Madrigal Tijucano, regido pelo Maestro Rafael Rocha, de 2019 à 2022 e estudou música no Curso de Extensão da Escola de Música da UFRJ \- Curso Básico Adulto em 2018.",
+        "Nascida em Brasília, a música sempre foi uma constância em sua vida. Desde a infância e adolescência, canalizou sua paixão formando diversas bandas e grupos, começando a compor suas primeiras canções ainda jovem. O mergulho nos estudos formais de música, no entanto, começou em 2017, aprofundando uma relação que sempre foi intuitiva.",
         
-        "É graduada em Direito pela Universidade Federal do Rio de Janeiro \- UFRJ e na universidade atuava na organização e promoção de eventos culturais, como saraus, festas e seminários, promovendo o conhecimento, a valorização cultural, a convivência social e o desenvolvimento econômico local. ",
+        "Sua passagem de sete anos pelo Rio de Janeiro foi um período de intensa ebulição cultural. Lá, integrou projetos importantes como o Projeto Toque e Se Toque e o Coral Tijucanto \(2017-2021\), Madrigal Tijucano, sob a regência do Maestro Rafael Rocha (2019-2022). Além disso, participou do Curso de Extensão da Escola de Música da UFRJ em 2018.",
         
-        "Em setembro de 2023, lança seu primeiro single \“Letargia\” e, em novembro do mesmo ano, lança seu segundo single \“Sentidos\”. Ambas são músicas do gênero rock, mas com referências distintas. Enquanto a primeira remete mais ao som do rock anos 90\/00, a outra traz fortes influências do blues rock.",
+        "A formação diversa é uma de suas marcas. Graduada em Direito pela Universidade Federal do Rio de Janeiro \- UFRJ, <b>PHEFIX</b> sempre esteve ligada à cena cultural universitária, atuando na organização e promoção de eventos como saraus, festas e seminários, com o objetivo de fomentar o conhecimento, a valorização cultural e o desenvolvimento econômico local.",
         
-        "Com uma carreira em ascensão, PHEFIX está produzindo seu primeiro EP e é finalista de 2 categorias no VIII Prêmio dos Profissionais da Música."
+        "Em 2023, deu início à sua carreira solo em grande estilo. Setembro marcou o lançamento do seu single de estreia, \“Letargia\”, seguido em novembro pelo segundo single, \“Sentidos\”. Ambas as canções mergulham no universo do rock, mas exploram facetas distintas\: a primeira remete ao som característico dos anos 90\/2000, enquanto a segunda traz fortes e cativantes influências do blues rock.",
+    
+        "Com uma carreira em clara ascensão, <b>PHEFIX</b> está atualmente produzindo seu primeiro EP. O reconhecimento de seu talento veio com a indicação como finalista em duas categorias no VIII Prêmio dos Profissionais da Música, confirmando a chegada de uma artista completa e promissora ao cenário musical."
     ],
     
     // Imagens da biografia (caminhos locais ou URLs)

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Configurações
     const IMAGE_FOLDER = './images/album/';
-    const TOTAL_IMAGES = 37; // Número total de imagens para carregar
+    const TOTAL_IMAGES = 35; // Número total de imagens para carregar
     
     // Função para mostrar erro
     function showError(message) {
@@ -223,12 +223,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 // Adicionar mensagem se não houver imagens suficientes
+                /*
                 if (imagesToUse.length < TOTAL_IMAGES) {
                     const message = document.createElement('div');
                     message.className = 'error-message';
                     message.innerHTML = `<p>Encontradas ${imagesToUse.length} imagens. Adicione mais imagens na pasta para preencher completamente o mosaico.</p>`;
                     mosaicContainer.appendChild(message);
                 }
+                */
             }
             
         } catch (error) {
